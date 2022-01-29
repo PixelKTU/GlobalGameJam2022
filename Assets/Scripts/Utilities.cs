@@ -24,4 +24,8 @@ public static class Utilities
         component = parentComponent.GetComponentInChildren<T>();
         return component != null;
     }
+    public static bool IsWithinBounds(this Vector2 range, float value)
+    {
+        return value >= range.x && value <= range.y;
+    }
 }

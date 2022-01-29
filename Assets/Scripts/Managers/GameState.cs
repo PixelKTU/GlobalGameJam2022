@@ -6,8 +6,11 @@ using UnityEngine;
 [ExecuteAlways]
 public class GameState : MonoBehaviour
 {
+    public StoryManager Story;
     public MentalStateManager MentalState;
     public HUD HUD;
+
+    public PlayerController player;
 
     public static GameState Instance { get; private set; }
 

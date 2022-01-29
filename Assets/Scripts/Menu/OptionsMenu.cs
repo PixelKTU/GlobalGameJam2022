@@ -23,10 +23,11 @@ public class OptionsMenu : MonoBehaviour
         SettingsManager.instance.volume = (int)volumeSlider.value;
         AudioManager.instance.SetAudioLevel(volumeSlider.value);
     }
-    private void Start()
+    public void UpdateValues()
     {
         volumeSlider.value = SettingsManager.instance.volume;
         shakeToggle.isOn = SettingsManager.instance.screenShake;
+        print(SettingsManager.instance.screenShake);
     }
     private void Update()
     {

@@ -21,6 +21,7 @@ public class OptionsMenu : MonoBehaviour
     public void VolumeChange()
     {
         SettingsManager.instance.volume = (int)volumeSlider.value;
+        AudioManager.instance.SetAudioLevel(volumeSlider.value);
     }
     private void Start()
     {

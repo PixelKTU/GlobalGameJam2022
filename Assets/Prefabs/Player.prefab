@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7439554018147625231}
   - component: {fileID: 7439554018147625234}
-  - component: {fileID: 4069026312027716175}
   - component: {fileID: 9169668328091557618}
   m_Layer: 7
   m_Name: Player
@@ -50,22 +49,9 @@ MonoBehaviour:
   runningSpeed: 6.5
   gravityValue: -9.81
   _mainCam: {fileID: 0}
---- !u!114 &4069026312027716175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7439554018147625228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e6da03f3174444991eaf4d47af8d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   interactionMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 0
   interactionDistance: 5
 --- !u!143 &9169668328091557618
 CharacterController:

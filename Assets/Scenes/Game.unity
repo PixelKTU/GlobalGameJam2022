@@ -2352,6 +2352,10 @@ PrefabInstance:
       propertyPath: _mainCam
       value: 
       objectReference: {fileID: 4069026311258854056}
+    - target: {fileID: 7439554018147625234, guid: 4a4f3ef24b3dd1a46bd97cf64af3e86f, type: 3}
+      propertyPath: interactionMask.m_Bits
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 7439554018519472003, guid: 4a4f3ef24b3dd1a46bd97cf64af3e86f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.7

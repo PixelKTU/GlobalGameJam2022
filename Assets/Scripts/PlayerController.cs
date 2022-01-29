@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
 
     [SerializeField] private Camera _mainCam;
+    [SerializeField] LayerMask interactionMask;
+    [SerializeField] float interactionDistance = 5;
+
+    private Interactable current;
 
     private void Start()
     {
@@ -49,5 +53,72 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        if (_inputManager.GetInteractionDown())
+        {
+            if (current)
+            {
+                current.Interact();
+            }
+        }
+    }
+
+
+    private void FixedUpdate()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(_mainCam.transform.position, _mainCam.transform.forward);
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactionMask))
+        {
+            if (hit.collider.TryGetComponentInParent(out Interactable interactable))
+            {
+                if (hit.distance <= interactionDistance)
+                {
+                    // Interable within interaction range
+                    Debug.DrawRay(_mainCam.transform.position, _mainCam.transform.forward * hit.distance, Color.green);
+                    Select(interactable);
+                }
+                else
+                {
+                    // Interactable within look range
+                    Debug.DrawRay(_mainCam.transform.position, _mainCam.transform.forward * hit.distance, Color.yellow);
+                    Deselect();
+                }
+            }
+            else
+            {
+                // Hit but interactable not found
+                Debug.DrawRay(_mainCam.transform.position, _mainCam.transform.forward * hit.distance, Color.white);
+                Deselect();
+            }
+        }
+        else
+        {
+            // Raycast did not hit anything
+            Debug.DrawRay(_mainCam.transform.position, _mainCam.transform.forward * 1000, Color.white);
+            Deselect();
+        }
+    }
+
+    private void Deselect()
+    {
+        GameState.Instance.HUD.DisplayInteractable(null);
+
+        if (current)
+        {
+            current.SetHover(false);
+            current = null;
+        }
+    }
+    private void Select(Interactable next)
+    {
+        if (current != next)
+        {
+            if (current) current.SetHover(false);
+            current = next;
+            current.SetHover(true);
+            GameState.Instance.HUD.DisplayInteractable(current);
+        }
     }
 }

@@ -32,6 +32,8 @@ public class SettingsManager : MonoBehaviour
     {
         screenShake = GetInt(shakeKey) == 1 ? true : false;
         volume = GetInt(volumeKey);
+
+        AudioManager.instance.SetAudioLevel(volume);
     }
 
     public void SetInt(string KeyName, int Value)

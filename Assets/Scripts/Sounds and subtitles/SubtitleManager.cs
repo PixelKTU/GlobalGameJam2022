@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UI : MonoBehaviour
+public class SubtitleManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI subtitles = default;
 
-    public static UI instance;
+    public static SubtitleManager instance;
 
     private void Awake()
     {
         instance = this;
+        subtitles.text = "";
     }
 
     public void SetSubtitle(string subtitle, float delay)

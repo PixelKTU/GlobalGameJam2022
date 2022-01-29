@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vocals : MonoBehaviour
+public class VoiceOverManager : MonoBehaviour
 {
     private AudioSource source;
-    public static Vocals instance;
+    public static VoiceOverManager instance;
 
     private void Awake()
     {
@@ -24,6 +24,6 @@ public class Vocals : MonoBehaviour
 
         source.PlayOneShot(clip.clip);
 
-        UI.instance.SetSubtitle(clip.subtitle, clip.clip.length + 1);
+        SubtitleManager.instance.SetSubtitle(clip.subtitle, clip.clip.length + 1);
     }
 }

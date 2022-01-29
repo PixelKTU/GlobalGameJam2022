@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,25 +12,43 @@ public class SubtitleManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        ClearSubtitle();
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+        SetSubtitle("");
     }
 
-    public void SetSubtitle(string subtitle, float delay)
+    public void SetSubtitle(VoiceOver voiceOver)
+    {
+
+        for (int i = 0; i < voiceOver.subtitles.Count; i++)
+        {
+            StartCoroutine(ShowSubtitle(voiceOver.subtitles[i].text, voiceOver.subtitles[i].timestamp, voiceOver.subtitles[i].delay));
+        }
+    }
+
+    public void SetSubtitle(string subtitle)
     {
         subtitles.text = subtitle;
-
-        StartCoroutine(ClearAfterSeconds(delay));
     }
 
-    public void ClearSubtitle()
+    private IEnumerator ShowSubtitle(string subtitle, float timestamp, float delay)
     {
-        subtitles.text = "";
+        yield return new WaitForSeconds(timestamp);
+        SetSubtitle(subtitle);
+        StartCoroutine(ClearAfterSeconds(delay));
     }
 
     private IEnumerator ClearAfterSeconds(float delay)
     {
         yield return new WaitForSeconds(delay);
-        ClearSubtitle();
+        SetSubtitle("");
     }
+
 }

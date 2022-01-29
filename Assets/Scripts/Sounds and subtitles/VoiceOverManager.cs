@@ -7,6 +7,8 @@ public class VoiceOverManager : MonoBehaviour
     private AudioSource source;
     public static VoiceOverManager instance;
 
+    private GameObject voiceOverAudio;
+
     private void Awake()
     {
         instance = this;
@@ -14,27 +16,28 @@ public class VoiceOverManager : MonoBehaviour
 
     private void Start()
     {
-        source = gameObject.GetComponent<AudioSource>();
+       // source = gameObject.GetComponent<AudioSource>();
     }
 
     public void Say(VoiceOver voiceOver)
     {
-        if (source.isPlaying)
-            source.Stop();
+        //if (source.isPlaying)
+        //    source.Stop();
 
         //source.PlayOneShot(voiceOver.clip);
-        AudioManager.Play(voiceOver.clip);
+
+        if(voiceOverAudio != null)
+        {
+            Destroy(voiceOverAudio);
+        }
+        voiceOverAudio = AudioManager.Play(voiceOver.clip);
+
+        SubtitleManager.instance.SetSubtitle(voiceOver);
 
         //SubtitleManager.instance.SetSubtitle(clip.subtitle[0], clip.clip.length + 1);
-        for(int i = 0; i < voiceOver.subtitles.Count; i++)
-        {
-            SubtitleManager.instance.SetSubtitle(voiceOver.subtitles[i].text, voiceOver.subtitles[i].delay);
-            StartCoroutine(Delay(voiceOver.subtitles[i].delay));
-        }
-    }
-
-    private IEnumerator Delay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        //for(int i = 0; i < voiceOver.subtitles.Count; i++)
+        //{
+        //    SubtitleManager.instance.SetSubtitle(voiceOver.subtitles[i].text, voiceOver.subtitles[i].delay);
+        //}
     }
 }

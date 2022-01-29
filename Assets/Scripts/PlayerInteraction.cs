@@ -10,6 +10,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private Interactable current;
 
+    InputManager inputManager;
+
+    private void Start()
+    {
+        inputManager = InputManager._instance;
+    }
     private void FixedUpdate()
     {
         RaycastHit hit;
@@ -49,7 +55,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(inputManager.GetInteractionDown())
         {
             if(current)
             {
@@ -60,6 +66,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Deselect()
     {
+        GameState.Instance.HUD.DisplayInteractable(null);
+
         if(current)
         {
             current.SetHover(false);
@@ -73,6 +81,7 @@ public class PlayerInteraction : MonoBehaviour
             if (current) current.SetHover(false);
             current = next;
             current.SetHover(true);
+            GameState.Instance.HUD.DisplayInteractable(current);
         }
     }
 }

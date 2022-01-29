@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] string defaultAction = "";
+
     public UnityEvent onHovered;
     public UnityEvent onUnhovered;
     public UnityEvent onInteracted;
@@ -26,9 +28,17 @@ public class Interactable : MonoBehaviour
     }
     public void Interact()
     {
-        Debug.Log($"Interacted with {gameObject}");
         onInteracted.Invoke();
         OnInteracted();
+    }
+
+    public virtual string Name()
+    {
+        return gameObject.name;
+    }
+    public virtual string Action()
+    {
+        return defaultAction;
     }
 
     protected virtual void OnHovered()

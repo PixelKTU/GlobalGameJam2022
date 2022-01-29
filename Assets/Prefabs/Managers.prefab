@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -793,7 +793,7 @@ MonoBehaviour:
   isGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 0
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: b6df618f46baa0249ae66517b2a346d3, type: 2}
 --- !u!1 &5441526994058951740
 GameObject:
@@ -1041,8 +1041,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Subtitles
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 07462074471d8a446b424bf6ce22a422, type: 2}
+  m_sharedMaterial: {fileID: -1547991900300741982, guid: 07462074471d8a446b424bf6ce22a422, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1157,8 +1157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b489a42929d267040866cc0caa333180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Story: {fileID: 0}
   MentalState: {fileID: 112144938776451106}
   HUD: {fileID: 7929538874060961852}
+  player: {fileID: 0}
 --- !u!1 &8693887650468950300
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6438dc76ccc73c243bb1029f60b3c833, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 27c246381c0fe6744a1c5327c415bdf0, type: 3}
+  subtitles:
+  - text: Once upon a time there was an old man
+    timestamp: 0.2
+    delay: 3.9
+  - text: He was very poor
+    timestamp: 5
+    delay: 2.2
+  - text: Once while fishing he saw a person in white clothes standing on surface
+      of a lake near his house
+    timestamp: 8.2
+    delay: 10
+  - text: It was Jesus fishing!
+    timestamp: 19.2
+    delay: 2.3

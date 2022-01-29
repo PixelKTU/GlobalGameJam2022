@@ -9,6 +9,6 @@ public class triggerSound : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            Vocals.instance.Say(clip);
+            VoiceOverManager.instance.Say(clip);
     }
 }

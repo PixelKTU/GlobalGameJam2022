@@ -38,6 +38,11 @@ public class InputManager : MonoBehaviour
         return _playerInput.PlayerControls.Look.ReadValue<Vector2>();
     }
 
+    public bool GetInteractionDown()
+    {
+        return _playerInput.PlayerControls.Interact.triggered;
+    }
+
     public bool IsRunning()
     {
         return _playerInput.PlayerControls.Run.IsPressed();

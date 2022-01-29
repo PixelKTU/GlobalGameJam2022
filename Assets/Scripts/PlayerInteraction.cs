@@ -60,6 +60,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Deselect()
     {
+        GameState.Instance.HUD.DisplayInteractable(null);
+
         if(current)
         {
             current.SetHover(false);
@@ -73,6 +75,7 @@ public class PlayerInteraction : MonoBehaviour
             if (current) current.SetHover(false);
             current = next;
             current.SetHover(true);
+            GameState.Instance.HUD.DisplayInteractable(current);
         }
     }
 }

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.43223312}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5680ed2542edd54c842184de8295243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0.3195021
-  mentalStateDeteriorationRate: 2
+  State: 0
+  mentalStateDeteriorationRate: 0.5
 --- !u!1 &1558187100257851506
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   isGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 0.6006224
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: b6df618f46baa0249ae66517b2a346d3, type: 2}
 --- !u!1 &5441526994058951740
 GameObject:
@@ -934,20 +934,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6415113440756413605, guid: d9f481337b4b5e545baa28c55999f60a, type: 3}
   m_PrefabInstance: {fileID: 3410026526530422872}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7654029944750289743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5001892394074536727, guid: d9f481337b4b5e545baa28c55999f60a, type: 3}
-  m_PrefabInstance: {fileID: 3410026526530422872}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &486758713909066933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654029944750289743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ee1ac285c14ecf49a3b07a9fac15249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

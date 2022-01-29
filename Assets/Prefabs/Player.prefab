@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9169668328091557618}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   _mainCam: {fileID: 0}
   interactionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65
   interactionDistance: 5
 --- !u!143 &9169668328091557618
 CharacterController:
@@ -65,12 +65,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.7
-  m_Radius: 0.3
+  m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &7439554018519472002
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7439554018519472002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.71, z: 0}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7439554018147625231}

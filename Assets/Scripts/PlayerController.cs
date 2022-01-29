@@ -25,10 +25,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         _inputManager = InputManager._instance;
 
         cameraTransform = _mainCam.transform;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
         move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
         move.y = 0f;
             
-        controller.Move(move * Time.deltaTime * ((_inputManager.IsRunning()) ? runningSpeed : walkingSpeed));
+        controller.Move(move.normalized * Time.deltaTime * ((_inputManager.IsRunning()) ? runningSpeed : walkingSpeed));
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Hello
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: dd6c4268647a1954bab880e3494fc661, type: 3}
-  subtitle: Hello!
+  subtitle:
+  - Hello!

@@ -5,6 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Audio Object", menuName = "Assets/New Audio Object")]
 public class VoiceOver : ScriptableObject
 {
+    //public class Subtitle
+    //{
+    //    public string text;
+    //    public float timeStamp;
+    //}
+
     public AudioClip clip;
-    public string subtitle;
+
+    public List<Subtitle> subtitles;
 }

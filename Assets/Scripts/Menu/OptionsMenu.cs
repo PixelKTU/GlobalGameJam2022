@@ -8,27 +8,32 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] GameObject optionsUI;
     [SerializeField] UnityEngine.UI.Slider volumeSlider;
     [SerializeField] UnityEngine.UI.Toggle shakeToggle;
+
     public void BackButton()
     {
         mainUI.SetActive(true);
         optionsUI.SetActive(false);
         SettingsManager.instance.Save();
     }
+
     public void ShakeToggle()
     {
         SettingsManager.instance.screenShake = shakeToggle.isOn;
     }
+
     public void VolumeChange()
     {
         SettingsManager.instance.volume = (int)volumeSlider.value;
-        AudioManager.instance.SetAudioLevel(volumeSlider.value);
+        AudioManager.instance.SetAudioLevel((int)volumeSlider.value / 100.0f);
     }
+
     public void UpdateValues()
     {
         volumeSlider.value = SettingsManager.instance.volume;
         shakeToggle.isOn = SettingsManager.instance.screenShake;
         print(SettingsManager.instance.screenShake);
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -37,5 +42,5 @@ public class OptionsMenu : MonoBehaviour
             print(SettingsManager.instance.volume);
         }
     }
-    
+
 }

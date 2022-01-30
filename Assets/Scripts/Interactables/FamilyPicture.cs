@@ -12,6 +12,6 @@ public class FamilyPicture : Interactable
     }
     private void Update()
     {
-        mr.material.SetFloat("censors", 3 - GameState.Instance.Story.rememberedPeople);
+        mr.materials[1].SetFloat("censors", 3 - GameState.Instance.Story.rememberedPeople);
     }
 }

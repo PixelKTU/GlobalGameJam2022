@@ -57,6 +57,7 @@ public class CoreMemory : Interactable
     {
         base.OnInteracted();
 
+        GameState.Instance.Story.RememberPerson();
         transform.DOScale(0, 1).OnComplete(() =>
         {
             GameState.Instance.Story.WakeUp();

@@ -30,7 +30,7 @@ public class VoiceOverManager : MonoBehaviour
         {
             Destroy(voiceOverAudio);
         }
-        voiceOverAudio = AudioManager.Play(voiceOver.clip);
+        voiceOverAudio = AudioManager.PlayVoiceOver(voiceOver.clip);
 
         SubtitleManager.instance.SetSubtitle(voiceOver);
 

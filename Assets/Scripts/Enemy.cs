@@ -45,9 +45,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            Hurt();
+            TriggerMemory();
         }
 
         _timeSinceLastAttack += Time.deltaTime;
@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(nameof(EndMemoryTrigger));
     }
 
-    private void Hurt()
+    public void Hurt()
     {
         if (_timeSinceLastHurt > _timeBetweenStuns)
         {
@@ -204,5 +204,14 @@ public class Enemy : MonoBehaviour
     {
         CleanAnimatorBooleans();
         _animator.SetTrigger("hit");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Spotlight")
+        {
+            print("Hello");
+            Hurt();
+        }
     }
 }

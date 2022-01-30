@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public float _seeDistance = 5f;
     public float _timeBetweenAttacks = 1f;
+    public float _timeBetweenStuns = 5f;
     public float _attackDistance = 2f;
     
     private Transform _target;
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
     public float _memoryTriggerTime = 5.5f;
     
     private float _timeSinceLastAttack = 0;
+    private float _timeSinceLastHurt = 0;
 
     private bool isAttacking = false;
     private void Start()
@@ -45,10 +47,11 @@ public class Enemy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            TriggerMemory();
+            Hurt();
         }
 
         _timeSinceLastAttack += Time.deltaTime;
+        _timeSinceLastHurt += Time.deltaTime;
         
         if (isStunned)
         {
@@ -116,9 +119,16 @@ public class Enemy : MonoBehaviour
 
     private void Hurt()
     {
-        isStunned = true;
+        if (_timeSinceLastHurt > _timeBetweenStuns)
+        {
+            isStunned = true;
 
-        StartCoroutine(nameof(EndHurt));
+            AnimatorHit();
+            
+            _timeSinceLastHurt = 0;
+            
+            StartCoroutine(nameof(EndHurt));
+        }
     }
 
     private void Attack()

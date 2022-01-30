@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         Reset();
     }
     
-    private void Reset()
+    public void Reset()
     {
         _target = GameObject.FindGameObjectWithTag("Player").transform;
         _agent = GetComponent<NavMeshAgent>();

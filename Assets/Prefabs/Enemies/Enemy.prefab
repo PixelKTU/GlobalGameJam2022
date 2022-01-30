@@ -93,6 +93,7 @@ Transform:
   - {fileID: 8267732802215608608}
   - {fileID: 2229713710041296234}
   - {fileID: 3605595875167387799}
+  - {fileID: 6209140818169469919}
   m_Father: {fileID: 4444986929727088997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1188,6 +1189,50 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.006523952, y: 0.055384696, z: 0.1593748}
     m_Extent: {x: 0.47503507, y: 0.88578224, z: 0.42724982}
   m_DirtyAABB: 0
+--- !u!1 &6618442521553755065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6209140818169469919}
+  - component: {fileID: 3701129672056766081}
+  m_Layer: 0
+  m_Name: Punch
+  m_TagString: Punch
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6209140818169469919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618442521553755065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5655860026568563524}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3701129672056766081
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618442521553755065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6704046060114675200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,9 +1430,10 @@ GameObject:
   - component: {fileID: 7248136111362758959}
   - component: {fileID: 478304226504269918}
   - component: {fileID: 478304226706806575}
+  - component: {fileID: 1016711238282486703}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1463,7 +1509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _seeDistance: 5
   _timeBetweenAttacks: 1
-  _attackDistance: 1.5
+  _attackDistance: 1
   _currentMemory: 0
   _waypoints:
   - {fileID: 0}
@@ -1473,6 +1519,20 @@ MonoBehaviour:
   - {fileID: 0}
   _hurtTime: 1
   _memoryTriggerTime: 5.5
+--- !u!136 &1016711238282486703
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7518729571131190900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32
+  m_Height: 2.59
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.53, z: 0}
 --- !u!1 &7710087131041892411
 GameObject:
   m_ObjectHideFlags: 0

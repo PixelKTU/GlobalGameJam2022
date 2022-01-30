@@ -57,6 +57,10 @@ public class CoreMemory : Interactable
     {
         base.OnInteracted();
 
-        transform.DOScale(10, 3);
+        transform.DOScale(0, 1).OnComplete(() =>
+        {
+            GameState.Instance.Story.WakeUp();
+            Destroy(gameObject);
+        });
     }
 }

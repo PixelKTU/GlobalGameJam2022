@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6438dc76ccc73c243bb1029f60b3c833, type: 3}
+  m_Name: Alcohol
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: f6937996ba69f424f8198f3789bb207b, type: 3}
+  subtitles:
+  - text: "My kid\u2019s development issues gave me an excuse to drink often."
+    timestamp: 0
+    delay: 4.9
+  - text: I used alcohol to destress myself every time my kid got bad grades.
+    timestamp: 5
+    delay: 5

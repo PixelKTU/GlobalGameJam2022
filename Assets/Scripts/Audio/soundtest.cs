@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class soundtest : MonoBehaviour
 {
-    [SerializeField] AudioClip onCamera;
-    [SerializeField] AudioClip onTransform;
-    [SerializeField] AudioClip atPosition;
+
+    [SerializeField] int playIndex;
+    [SerializeField] VoiceOver[] voiceOver;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            AudioManager.Play(onCamera);
+            VoiceOverManager.instance.Say(voiceOver[playIndex]);
         }
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            AudioManager.Play(transform, onTransform);
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            AudioManager.Play(transform.position + new Vector3(0, 0, 10), atPosition);
-        }
     }
 }

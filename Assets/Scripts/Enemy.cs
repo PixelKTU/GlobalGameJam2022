@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
     private float _timeSinceLastHurt = 0;
 
     private bool isAttacking = false;
+
+    [SerializeField] private AudioClip memoryClip;
     private void Start()
     {
         Reset();
@@ -45,11 +47,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            TriggerMemory();
-        }
-
         _timeSinceLastAttack += Time.deltaTime;
         _timeSinceLastHurt += Time.deltaTime;
         
@@ -111,6 +108,8 @@ public class Enemy : MonoBehaviour
             _currentMemory++;
         }
 
+        var sound = AudioManager.PlayVoiceOver(memoryClip);
+        
         isStunned = true;
         AnimatorMemory();
         
@@ -204,14 +203,5 @@ public class Enemy : MonoBehaviour
     {
         CleanAnimatorBooleans();
         _animator.SetTrigger("hit");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Spotlight")
-        {
-            print("Hello");
-            Hurt();
-        }
     }
 }

@@ -21,7 +21,7 @@ public class CinemachineFPSExtension : CinemachineExtension
 
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
-        if (vcam.Follow)
+        if (vcam.Follow && GameState.Instance.player.active)
         {
             if (stage == CinemachineCore.Stage.Aim)
             {

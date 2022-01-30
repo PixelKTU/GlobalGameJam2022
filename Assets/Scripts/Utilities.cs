@@ -28,4 +28,8 @@ public static class Utilities
     {
         return value >= range.x && value <= range.y;
     }
+    public static float RandomFromRange(this Vector2 range)
+    {
+        return Random.Range(range.x, range.y);
+    }
 }

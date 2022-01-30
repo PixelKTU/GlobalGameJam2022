@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7439554018147625231}
   - component: {fileID: 7439554018147625234}
-  - component: {fileID: 4069026312027716175}
   - component: {fileID: 9169668328091557618}
   m_Layer: 7
   m_Name: Player
@@ -50,19 +49,6 @@ MonoBehaviour:
   runningSpeed: 6.5
   gravityValue: -9.81
   _mainCam: {fileID: 0}
---- !u!114 &4069026312027716175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7439554018147625228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e6da03f3174444991eaf4d47af8d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   interactionMask:
     serializedVersion: 2
     m_Bits: 65
@@ -79,12 +65,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.7
-  m_Radius: 0.3
+  m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &7439554018519472002
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7439554018519472002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.71, z: 0}
+  m_LocalPosition: {x: 0, y: 1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7439554018147625231}

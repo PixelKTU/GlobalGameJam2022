@@ -24,8 +24,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera _mainCam;
     [SerializeField] LayerMask interactionMask;
     [SerializeField] float interactionDistance = 5;
+    [SerializeField] Transform eyesTr;
 
     private Interactable current;
+
+    public bool active = false;
 
     private void Start()
     {
@@ -39,6 +42,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!active) return;
+
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
@@ -66,6 +71,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!active) return;
+
         RaycastHit hit;
         Ray ray = new Ray(_mainCam.transform.position, _mainCam.transform.forward);
         // Does the ray intersect any objects excluding the player layer
@@ -120,5 +127,10 @@ public class PlayerController : MonoBehaviour
             current.SetHover(true);
             GameState.Instance.HUD.DisplayInteractable(current);
         }
+    }
+
+    public void ResetPose()
+    {
+        eyesTr.rotation = Quaternion.identity;
     }
 }

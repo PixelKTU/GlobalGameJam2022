@@ -32,6 +32,7 @@ public class StoryManager : MonoBehaviour
 
     public void RememberPerson()
     {
+        GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().TriggerMemory();
         rememberedPeople++;
 
         if(rememberedPeople >= 3)

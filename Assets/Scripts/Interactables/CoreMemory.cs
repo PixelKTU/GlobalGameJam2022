@@ -12,6 +12,8 @@ public class CoreMemory : Interactable
     [SerializeField] LayerMask blockingMask;
 
     [SerializeField] float flySpeed;
+    [SerializeField] int disabledAfter = 3;
+    [SerializeField] int enableBefore = 3;
 
     Vector3 currentTarget;
     Vector3 currentVelocity;
@@ -19,7 +21,7 @@ public class CoreMemory : Interactable
     IEnumerator Start()
     {
         currentTarget = transform.position;
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(newTargetCooldownRange.RandomFromRange());
             AquireTarget();
@@ -28,7 +30,7 @@ public class CoreMemory : Interactable
 
     private void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, currentTarget, ref currentVelocity, 1/flySpeed);
+        transform.position = Vector3.SmoothDamp(transform.position, currentTarget, ref currentVelocity, 1 / flySpeed);
     }
 
     private void AquireTarget()
@@ -44,7 +46,7 @@ public class CoreMemory : Interactable
             if (!Physics.Raycast(ray, out hit, targetDirection.magnitude, blockingMask))
             {
 
-                if(!Physics.SphereCast(ray, 0.5f, targetDirection.magnitude, blockingMask))
+                if (!Physics.SphereCast(ray, 0.5f, targetDirection.magnitude, blockingMask))
                 {
                     currentTarget = transform.position + targetDirection;
                     return;

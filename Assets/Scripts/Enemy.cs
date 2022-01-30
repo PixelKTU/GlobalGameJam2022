@@ -52,7 +52,6 @@ public class Enemy : MonoBehaviour
         
         if (isStunned)
         {
-            print("I am stunned");
             _agent.isStopped = true;
         }
         else
@@ -64,13 +63,11 @@ public class Enemy : MonoBehaviour
                 var distanceToWaypoint = Vector3.Distance(_waypoints[_currentMemory].position ,transform.position);
                 if (distanceToWaypoint > 0.5f)
                 {
-                    print("Go to waypoints");
                     AnimatorWalk();
                     _agent.SetDestination(_waypoints[_currentMemory].position);
                 }
                 else
                 {
-                    print("Idle");
                     AnimatorIdle();
                 }
             }
@@ -89,7 +86,6 @@ public class Enemy : MonoBehaviour
                 {
                     AnimatorWalk();
                     _agent.SetDestination(_target.position);
-                    print("Chase");
                 }
             }
         }

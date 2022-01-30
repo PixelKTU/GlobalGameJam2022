@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     public bool active = false;
 
+    private Transform enemy;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -39,6 +41,8 @@ public class PlayerController : MonoBehaviour
         cameraTransform = _mainCam.transform;
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
 
     void Update()

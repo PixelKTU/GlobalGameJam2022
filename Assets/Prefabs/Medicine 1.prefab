@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3084687026089722330, guid: ee3cbf16907d61e408019553eb7051ae, type: 3}
       propertyPath: m_Name
-      value: Medicine (4)
+      value: Medicine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee3cbf16907d61e408019553eb7051ae, type: 3}
@@ -337,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3084687026089722330, guid: ee3cbf16907d61e408019553eb7051ae, type: 3}
       propertyPath: m_Name
-      value: Medicine (5)
+      value: Medicine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee3cbf16907d61e408019553eb7051ae, type: 3}

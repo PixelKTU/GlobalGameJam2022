@@ -39,6 +39,8 @@ public class SettingsManager : MonoBehaviour
         screenShake = GetInt(shakeKey) == 1 ? true : false;
         volume = GetInt(volumeKey);
 
+        volume = 80;
+
         AudioManager.instance.SetAudioLevel(volume / 100.0f);
     }
 

@@ -3,7 +3,27 @@ guid: 93bf6d6e22e6d6448b8886b8c23e0a27
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IV_bag
+    second: {fileID: 2100000, guid: 593c1a59c24cbd2498f3802f029adc21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IV_bag_top_holder
+    second: {fileID: 2100000, guid: 0f3b5a5ebc545a34eb11d7b0d32aba2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IV_left_cap
+    second: {fileID: 2100000, guid: f1cd8765d5cbde34d80942735f3c26f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IV_right_cap
+    second: {fileID: 2100000, guid: 440368ca14145d94a854256e75a1cf93, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

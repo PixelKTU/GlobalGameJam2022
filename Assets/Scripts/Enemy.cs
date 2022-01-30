@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
-    private void TriggerMemory()
+    public void TriggerMemory()
     {
         if (_currentMemory+1 != _waypoints.Length)
         {

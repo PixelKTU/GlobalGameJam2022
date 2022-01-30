@@ -74,6 +74,13 @@ public class AudioManager : MonoBehaviour
         return instance.PlaySoundInternal(audioClip: audioClip, loop: loop);
     }
 
+    public static GameObject PlayVoiceOver(AudioClip audioClip)
+    {
+
+        return instance.PlaySoundInternal(audioClip: audioClip, mixerGruop: "Voice Over");
+    }
+
+
     /// <summary>
     /// Play random audio clip, audio source on main camera
     /// </summary>
@@ -147,7 +154,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    GameObject PlaySoundInternal(AudioClip audioClip, Transform transform = null, Vector3 position = default, bool loop = false)
+    GameObject PlaySoundInternal(AudioClip audioClip, Transform transform = null, Vector3 position = default, bool loop = false, string mixerGruop = "Master")
     {
         if (audioClip == null)
         {
@@ -184,7 +191,7 @@ public class AudioManager : MonoBehaviour
         }
 
         AudioSource source = soundObject.GetComponent<AudioSource>();
-        source.outputAudioMixerGroup = instance.mainMixer.FindMatchingGroups("Master")[0];
+        source.outputAudioMixerGroup = instance.mainMixer.FindMatchingGroups(mixerGruop)[0];
         source.loop = loop;
         source.clip = audioClip;
         source.Play();

@@ -26,7 +26,7 @@ public class SubtitleManager : MonoBehaviour
 
     public void SetSubtitle(VoiceOver voiceOver)
     {
-
+        StopAllCoroutines();
         for (int i = 0; i < voiceOver.subtitles.Count; i++)
         {
             StartCoroutine(ShowSubtitle(voiceOver.subtitles[i].text, voiceOver.subtitles[i].timestamp, voiceOver.subtitles[i].delay));

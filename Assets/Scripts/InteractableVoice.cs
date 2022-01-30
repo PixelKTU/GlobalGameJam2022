@@ -44,6 +44,6 @@ public class InteractableVoice : MonoBehaviour
             Unplayed.RemoveAt(0);
         }
 
-        SubtitleManager.instance.SetSubtitle(vo);
+        VoiceOverManager.instance.Say(vo);
     }
 }

@@ -9,7 +9,8 @@ public class SettingsManager : MonoBehaviour
     const string shakeKey = "shake";
 
     public bool screenShake = true;
-    public int volume = 100;
+    public int volume = 50;
+
     private void Awake()
     {
         if (instance != null)
@@ -20,6 +21,10 @@ public class SettingsManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    void Start()
+    {
         Load();
     }
 
@@ -28,12 +33,13 @@ public class SettingsManager : MonoBehaviour
         SetInt(volumeKey, volume);
         SetInt(shakeKey, screenShake == true ? 1 : 0);
     }
+
     public void Load()
     {
         screenShake = GetInt(shakeKey) == 1 ? true : false;
         volume = GetInt(volumeKey);
 
-        AudioManager.instance.SetAudioLevel(volume);
+        AudioManager.instance.SetAudioLevel(volume / 100.0f);
     }
 
     public void SetInt(string KeyName, int Value)

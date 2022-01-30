@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     {
         mainUI.SetActive(false);
         optionsUI.SetActive(true);
+        optionsUI.GetComponent<OptionsMenu>().UpdateValues();
     }
     public void QuitButton()
     {

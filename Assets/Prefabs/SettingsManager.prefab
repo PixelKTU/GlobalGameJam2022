@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenShake: 1
-  volume: 0
+  volume: 50

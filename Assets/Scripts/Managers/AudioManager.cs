@@ -58,7 +58,9 @@ public class AudioManager : MonoBehaviour
     /// <param name="level">from 0.0001 to 1 (cant be 0)</param>
     public void SetAudioLevel(float level)
     {
-        mainMixer.SetFloat(name, Mathf.Log10(level) * 20);
+        if (level <= 0.01) level = 0.01f;
+
+        mainMixer.SetFloat("Volume", Mathf.Log10(level) * 40);
     }
 
     /// <summary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class HUD : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI InteractableNameText;
     [SerializeField] TextMeshProUGUI InteractableActionText;
+
+    [SerializeField] Slider sanitySlider;
+    [SerializeField] TextMeshProUGUI sanityMessage;
 
     public void DisplayInteractable(Interactable interactable)
     {
@@ -27,5 +31,11 @@ public class HUD : MonoBehaviour
             InteractableNameText.DOFade(0, fadeDuration);
             InteractableActionText.DOFade(0, fadeDuration);
         }
+    }
+
+    private void Update()
+    {
+        sanitySlider.value = GameState.Instance.MentalState.State;
+        sanityMessage.enabled = GameState.Instance.MentalState.State < 0.3f;
     }
 }

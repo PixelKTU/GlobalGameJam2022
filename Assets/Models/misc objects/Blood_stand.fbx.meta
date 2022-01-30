@@ -3,7 +3,22 @@ guid: b52dc22b3f0988c4fb16b3ebbdc63463
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blood_stand
+    second: {fileID: 2100000, guid: e5e2663f92d765b458e5fea3f7161930, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel
+    second: {fileID: 2100000, guid: c3b746fe4b7294f47910a2949a1d2aa3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel_separator
+    second: {fileID: 2100000, guid: 430b68a49f4ec4c459c0ee66c285c80c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

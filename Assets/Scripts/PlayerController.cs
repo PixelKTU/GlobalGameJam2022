@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -132,5 +133,14 @@ public class PlayerController : MonoBehaviour
     public void ResetPose()
     {
         eyesTr.rotation = Quaternion.identity;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Punch")
+        {
+            GameState.Instance.Story.WakeUp();
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().Reset();
+        }
     }
 }
